@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Practice Questions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Trebuchet MS", "Comic Sans MS", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(92, 155, 255, 0.18), transparent 26%),
+      radial-gradient(circle at top right, rgba(76, 201, 240, 0.14), transparent 22%),
+      linear-gradient(180deg, #f6faff 0%, #f7fbfd 52%, #f8fbff 100%);
+    color: #314255;
+    font-size: 19px;
+    line-height: 1.8;
+    padding: 28px 18px 50px;
+  }
+  .container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    color: #17324d;
+    font-size: clamp(2.45rem, 5.4vw, 3.8rem);
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 0 rgba(214, 229, 245, 0.9);
+  }
+  .subtitle {
+    text-align: center;
+    color: #5f7287;
+    margin: 0 auto 34px;
+    font-size: 1.14em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    width: fit-content;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(70, 102, 136, 0.10);
+  }
+  section {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    border-radius: 30px;
+    padding: 32px 32px 30px;
+    margin-bottom: 34px;
+    box-shadow: 0 18px 34px rgba(27, 48, 66, 0.09);
+    border: 4px solid #dde8f5;
+    overflow: hidden;
+  }
+  .container > section:nth-of-type(1) {
+    border-color: #d8e8fb;
+    background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+  }
+  .container > section:nth-of-type(2) {
+    border-color: #d7efe8;
+    background: linear-gradient(180deg, #ffffff 0%, #f5fcfa 100%);
+  }
+  .container > section:nth-of-type(3) {
+    border-color: #fde1d8;
+    background: linear-gradient(180deg, #ffffff 0%, #fff8f5 100%);
+  }
+  .container > section:nth-of-type(4) {
+    border-color: #e2e4fb;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f8ff 100%);
+  }
+  h2 {
+    color: #fff;
+    padding: 16px 22px;
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+    font-size: clamp(1.72rem, 3.4vw, 2.5rem);
+    line-height: 1.35;
+    margin-bottom: 22px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+  }
+  .container > section:nth-of-type(1) > h2 {
+    background: linear-gradient(135deg, #1f6fb2, #42a5f5);
+  }
+  .container > section:nth-of-type(2) > h2 {
+    background: linear-gradient(135deg, #187d74, #41bfb4);
+  }
+  .container > section:nth-of-type(3) > h2 {
+    background: linear-gradient(135deg, #d96c52, #f19a7a);
+  }
+  .container > section:nth-of-type(4) > h2 {
+    background: linear-gradient(135deg, #5567d8, #7b88f2);
+  }
+  h3 {
+    color: #1d5f8c;
+    border-left: 7px solid #4aa3df;
+    padding-left: 14px;
+    margin: 24px 0 14px;
+    font-size: 1.5em;
+  }
+  h4 {
+    color: #2c7a68;
+    margin: 16px 0 8px;
+    font-size: 1.24em;
+  }
+
+  /* Adjectives Table (Part A) */
+  .adj-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .adj-table caption {
+    background: #334e68;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.48em;
+    font-weight: bold;
+    border: 3px solid #243b53;
+    border-bottom: none;
+  }
+  .adj-table th, .adj-table td {
+    border: 3px solid #486581;
+    padding: 12px 14px;
+    vertical-align: top;
+    text-align: left;
+  }
+  .adj-table th {
+    background: #edf3f8;
+    font-size: 1.24em;
+    width: 33.33%;
+    text-align: center;
+  }
+  .adj-table td {
+    background: #ffffff;
+    font-size: 1.18em;
+  }
+  .adj-table .en {
+    font-weight: bold;
+    color: #1f6fb2;
+  }
+  .adj-table .zh {
+    color: #7a8b9a;
+    font-size: 0.88em;
+    margin-left: 4px;
+  }
+  .adj-table li {
+    list-style: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed #d6dee6;
+  }
+  .adj-table li:last-child { border-bottom: none; }
+
+  /* Example sentences */
+  .examples {
+    background: #f7fafc;
+    border-left: 5px solid #5aa9e6;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    box-shadow: inset 0 0 0 1px rgba(90, 169, 230, 0.10);
+  }
+  .examples ol, .examples ul {
+    padding-left: 22px;
+  }
+  .examples li {
+    padding: 4px 0;
+    color: #364152;
+    font-size: 1.08em;
+  }
+  .examples .zh {
+    color: #728394;
+    font-size: 1.03em;
+    display: block;
+    margin-left: 4px;
+  }
+
+  /* Part B stages */
+  .stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin: 18px 0;
+  }
+  .stage-card {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 3px solid var(--stage-border, #cfe3ff);
+    border-radius: 24px;
+    padding: 20px 16px 18px;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(27, 48, 66, 0.12);
+    overflow: hidden;
+  }
+  .stage-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: linear-gradient(90deg, var(--stage-accent, #4d96ff), var(--stage-accent-light, #8ec5ff));
+  }
+  .stage-card:nth-child(1) {
+    --stage-accent: #2b7fff;
+    --stage-accent-light: #69b3ff;
+    --stage-border: #cfe1ff;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+  }
+  .stage-card:nth-child(2) {
+    --stage-accent: #00a88f;
+    --stage-accent-light: #52d6bf;
+    --stage-border: #c9f1ea;
+    background: linear-gradient(180deg, #ffffff 0%, #f2fffc 100%);
+  }
+  .stage-card:nth-child(3) {
+    --stage-accent: #ff9f1c;
+    --stage-accent-light: #ffd166;
+    --stage-border: #ffe0af;
+    background: linear-gradient(180deg, #ffffff 0%, #fff9f0 100%);
+  }
+  .stage-card:nth-child(4) {
+    --stage-accent: #ff6b6b;
+    --stage-accent-light: #ffa08a;
+    --stage-border: #ffd0ca;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f3 100%);
+  }
+  .stage-card .label {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--stage-accent, #2b8a3e), var(--stage-accent-light, #55b86a));
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 1.1em;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    margin: 10px 0 12px;
+    box-shadow: 0 10px 18px rgba(27, 48, 66, 0.16);
+  }
+  .stage-card .word-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 2px;
+  }
+  .stage-card .word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 2px solid rgba(23, 50, 77, 0.08);
+    font-weight: bold;
+    color: #213547;
+    font-size: 1.34em;
+    line-height: 1.3;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+  }
+  .stage-card .word .zh-inline {
+    color: #5d7083;
+    font-size: 0.94em;
+    font-weight: 700;
+  }
+
+  /* Part C story */
+  .story-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 12px 0;
+  }
+  .story-column {
+    border-radius: 18px;
+    padding: 18px 20px;
+    border: 2px solid #d7e3ee;
+    background: #f9fbfd;
+  }
+  .story-column.english {
+    border-color: #cfe1f7;
+    background: linear-gradient(180deg, #f8fbff 0%, #f2f7fd 100%);
+  }
+  .story-column.chinese {
+    border-color: #f2d8d2;
+    background: linear-gradient(180deg, #fffaf8 0%, #fff4f1 100%);
+  }
+  .story-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 1.04em;
+    font-weight: 800;
+  }
+  .story-column.english .story-label {
+    background: #dfeefe;
+    color: #205a8d;
+  }
+  .story-column.chinese .story-label {
+    background: #fde4dd;
+    color: #b85b46;
+  }
+  .story-column p {
+    margin: 0 0 12px;
+  }
+  .story-column p:last-child {
+    margin-bottom: 0;
+  }
+  .story-column .en {
+    color: #1f5f94;
+    font-weight: 700;
+    line-height: 1.8;
+    font-size: 1.14em;
+  }
+  .story-column .zh {
+    color: #556575;
+    line-height: 1.85;
+    font-size: 1.12em;
+  }
+  .qa {
+    background: #fff8f5;
+    border-left: 5px solid #e99072;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 0 1px rgba(233, 144, 114, 0.10);
+  }
+  .qa .q { color: #bc5b3d; font-weight: bold; font-size: 1.14em; }
+  .qa .a { color: #235b88; margin-top: 6px; font-size: 1.08em; }
+  .qa .zh { color: #768696; font-size: 1.03em; display: block; }
+
+  /* Part D vocab */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .vocab-card {
+    background: #fff;
+    border: 2px solid #d4e2f0;
+    border-radius: 14px;
+    padding: 12px 14px;
+    transition: transform 0.15s;
+  }
+  .vocab-card:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(39, 72, 105, 0.10); }
+  .vocab-card .word {
+    font-weight: bold;
+    color: #215f93;
+    font-size: 1.36em;
+  }
+  .vocab-card .meaning {
+    color: #748494;
+    font-size: 1.03em;
+    margin-left: 6px;
+  }
+  .vocab-card .sentence {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #d6dee6;
+    color: #364152;
+    font-size: 1.08em;
+  }
+  .vocab-card .zh {
+    display: block;
+    color: #748494;
+    font-size: 1.01em;
+  }
+  .function-sheet {
+    background: linear-gradient(180deg, #ffffff 0%, #fffdf5 100%);
+    border: 2px solid #e1ddc9;
+    border-radius: 26px;
+    padding: 18px 20px 20px;
+    box-shadow: inset 0 0 0 1px rgba(223, 216, 188, 0.4);
+  }
+  .practice-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+  .answer-toggle {
+    border: 2px solid #7b88f2;
+    background: linear-gradient(180deg, #ffffff 0%, #eef1ff 100%);
+    color: #3948aa;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 0.96em;
+    font-weight: 800;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    box-shadow: 0 6px 14px rgba(85, 103, 216, 0.12);
+  }
+  .answer-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(85, 103, 216, 0.18);
+  }
+  .answer-toggle:focus-visible {
+    outline: 3px solid rgba(123, 136, 242, 0.28);
+    outline-offset: 2px;
+  }
+  .word-bank-wrap {
+    overflow-x: auto;
+  }
+  .word-bank-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #fff;
+  }
+  .word-bank-table caption {
+    caption-side: top;
+    font-size: 1.92em;
+    font-weight: 900;
+    color: #222d45;
+    padding: 10px 12px 12px;
+    border: 2px solid #bfc4d4;
+    border-bottom: none;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+  }
+  .word-bank-table td {
+    width: 33.33%;
+    border: 2px solid #bfc4d4;
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+  }
+  .word-bank-table .en {
+    display: block;
+    font-size: 1.72em;
+    font-weight: 900;
+    color: #1f2b45;
+    line-height: 1.08;
+  }
+  .word-bank-table .zh {
+    display: block;
+    margin-top: 4px;
+    color: #6d778b;
+    font-size: 0.86em;
+    line-height: 1.35;
+  }
+  .function-practice {
+    margin: 22px 0 0;
+    padding-left: 40px;
+  }
+  .function-practice li {
+    margin: 16px 0;
+    color: #1f2b45;
+  }
+  .function-practice li::marker {
+    font-weight: 900;
+    font-size: 1.18em;
+  }
+  .function-line {
+    font-size: clamp(1.34rem, 2.7vw, 1.95rem);
+    font-weight: 800;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+  }
+  .fill-word {
+    display: inline-block;
+    padding: 0 0.22em 0.05em;
+    margin: 0 0.08em;
+    background: #fff200;
+    color: #ef2d2d;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: inset 0 -3px 0 #1f2b45;
+  }
+  .function-sheet.answers-hidden .fill-word {
+    background: transparent;
+    color: transparent;
+    text-shadow: none;
+    box-shadow: inset 0 -3px 0 #1f2b45;
+  }
+  .function-practice .zh {
+    display: block;
+    margin-top: 4px;
+    color: #728091;
+    font-size: 1.02em;
+    line-height: 1.5;
+  }
+  .verb-sheet .word-bank-table .en {
+    font-size: 1.42em;
+  }
+  .verb-sheet .function-line {
+    font-size: clamp(1.2rem, 2.35vw, 1.72rem);
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 18px;
+      padding: 14px 10px 34px;
+    }
+    .container {
+      max-width: 100%;
+    }
+    section {
+      padding: 20px 16px 18px;
+      border-radius: 22px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 2.2em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    h2 {
+      padding: 12px 14px;
+      font-size: 1.5em;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 1.38em;
+      margin: 18px 0 12px;
+      padding-left: 10px;
+      border-left-width: 5px;
+    }
+    h4 {
+      font-size: 1.18em;
+    }
+    .subtitle {
+      width: auto;
+      padding: 8px 12px;
+      font-size: 1.08em;
+      letter-spacing: 0.03em;
+      margin-bottom: 22px;
+    }
+    .adj-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    .adj-table caption {
+      font-size: 1.34em;
+    }
+    .adj-table th, .adj-table td {
+      min-width: 150px;
+      padding: 8px;
+      font-size: 1.08em;
+    }
+    .story-split {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .story-column,
+    .examples,
+    .qa,
+    .vocab-card,
+    .stage-card {
+      padding: 14px 14px 16px;
+    }
+    .story-label,
+    .stage-card .label {
+      font-size: 1.04em;
+    }
+    .story-column .en,
+    .story-column .zh,
+    .qa .q,
+    .qa .a,
+    .vocab-card .sentence {
+      font-size: 1.14em;
+    }
+    .stage-card .word {
+      font-size: 1.28em;
+      padding: 8px 10px;
+    }
+    .stage-card .word .zh-inline {
+      font-size: 1em;
+    }
+    .vocab-card .word {
+      font-size: 1.32em;
+    }
+    .vocab-card .meaning,
+    .vocab-card .zh,
+    .examples .zh {
+      font-size: 1.04em;
+    }
+    .function-sheet {
+      padding: 14px 14px 16px;
+      border-radius: 20px;
+    }
+    .practice-toolbar {
+      margin-bottom: 10px;
+    }
+    .answer-toggle {
+      width: 100%;
+      justify-content: center;
+      padding: 9px 12px;
+      font-size: 0.92em;
+      display: inline-flex;
+    }
+    .word-bank-table caption {
+      font-size: 1.54em;
+      padding: 10px 8px;
+    }
+    .word-bank-table td {
+      padding: 10px 6px;
+    }
+    .word-bank-table .en {
+      font-size: 1.4em;
+    }
+    .word-bank-table .zh {
+      font-size: 0.8em;
+    }
+    .function-practice {
+      margin-top: 18px;
+      padding-left: 32px;
+    }
+    .function-line {
+      font-size: 1.34em;
+    }
+    .fill-word {
+      padding: 0 0.16em 0.04em;
+      box-shadow: inset 0 -2px 0 #1f2b45;
+    }
+    .verb-sheet .word-bank-table .en {
+      font-size: 1.16em;
+    }
+    .verb-sheet .function-line {
+      font-size: 1.22em;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🌸 Exam Practice Questions 🌱</h1>
+  <p class="subtitle">Part A · Part B · Part C · Part D</p>
+
+  <!-- PART A -->
+  <section>
+    <h2>Part A ｜ Adjectives 形容詞</h2>
+
+    <table class="adj-table">
+      <caption>Adjectives</caption>
+      <thead>
+        <tr>
+          <th>Colour 顏色</th>
+          <th>Size / Shape 大小／形狀</th>
+          <th>Other 其他</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <li><span class="en">red</span><span class="zh">紅色的</span></li>
+              <li><span class="en">yellow</span><span class="zh">黃色的</span></li>
+              <li><span class="en">blue</span><span class="zh">藍色的</span></li>
+              <li><span class="en">green</span><span class="zh">綠色的</span></li>
+              <li><span class="en">pink</span><span class="zh">粉紅色的</span></li>
+              <li><span class="en">purple</span><span class="zh">紫色的</span></li>
+              <li><span class="en">orange</span><span class="zh">橘色的</span></li>
+              <li><span class="en">white</span><span class="zh">白色的</span></li>
+              <li><span class="en">black</span><span class="zh">黑色的</span></li>
+              <li><span class="en">brown</span><span class="zh">咖啡色的</span></li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><span class="en">big</span><span class="zh">大的</span></li>
+              <li><span class="en">small</span><span class="zh">小的</span></li>
+              <li><span class="en">tall</span><span class="zh">高的</span></li>
+              <li><span class="en">short</span><span class="zh">矮的／短的</span></li>
+              <li><span class="en">long</span><span class="zh">長的</span></li>
+              <li><span class="en">tiny</span><span class="zh">很小的</span></li>
+              <li><span class="en">thin</span><span class="zh">細的／瘦的</span></li>
+              <li><span class="en">thick</span><span class="zh">粗的</span></li>
+              <li><span class="en">round</span><span class="zh">圓的</span></li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><span class="en">pretty</span><span class="zh">漂亮的</span></li>
+              <li><span class="en">beautiful</span><span class="zh">美麗的</span></li>
+              <li><span class="en">cute</span><span class="zh">可愛的</span></li>
+              <li><span class="en">happy</span><span class="zh">開心的</span></li>
+              <li><span class="en">nice</span><span class="zh">美好的／好看的</span></li>
+              <li><span class="en">clean</span><span class="zh">乾淨的</span></li>
+              <li><span class="en">dirty</span><span class="zh">骯髒的</span></li>
+              <li><span class="en">young</span><span class="zh">年幼的</span></li>
+              <li><span class="en">old</span><span class="zh">年老的</span></li>
+              <li><span class="en">bright</span><span class="zh">明亮的</span></li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>✏️ 例句 Example Sentences</h3>
+    <div class="examples">
+      <ol>
+        <li>The flowers are red and pretty.</li>
+        <li>The tree is tall and green.</li>
+        <li>The leaves are small and green.</li>
+        <li>The bird is small and cute.</li>
+        <li>The cat is white and cute.</li>
+        <li>The dog is brown and happy.</li>
+        <li>The ball is round and blue.</li>
+        <li>The kite is big and colourful.</li>
+        <li>The bag is small and pink.</li>
+        <li>The car is big and black.</li>
+        <li>The house is big and beautiful.</li>
+        <li>The sun is bright and yellow.</li>
+        <li>The cloud is white and soft.</li>
+        <li>The sky is blue and clean.</li>
+        <li>The apple is red and round.</li>
+        <li>The banana is long and yellow.</li>
+        <li>The fish is small and orange.</li>
+        <li>The butterfly is pretty and colourful.</li>
+        <li>The book is new and clean.</li>
+        <li>The box is big and brown.</li>
+        <li>The rabbit is white and small.</li>
+        <li>The girl is young and happy.</li>
+        <li>The boy is short and happy.</li>
+        <li>The baby is cute and young.</li>
+        <li>The road is long and clean.</li>
+        <li>The chair is small and brown.</li>
+        <li>The table is long and brown.</li>
+        <li>The flower pot is small and nice.</li>
+        <li>The garden is beautiful and clean.</li>
+        <li>The classroom is big and bright.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PART B -->
+  <section>
+    <h2>Part B ｜ 植物成長四階段</h2>
+
+    <h3>🌱 四大階段關鍵字</h3>
+    <div class="stages">
+      <div class="stage-card">
+        <span class="label">First</span>
+        <div class="word-list">
+          <span class="word">seed <span class="zh-inline">種子</span></span>
+        </div>
+      </div>
+      <div class="stage-card">
+        <span class="label">Next</span>
+        <div class="word-list">
+          <span class="word">sprout <span class="zh-inline">萌芽</span></span>
+        </div>
+      </div>
+      <div class="stage-card">
+        <span class="label">Then</span>
+        <div class="word-list">
+          <span class="word">seedling <span class="zh-inline">幼苗</span></span>
+          <span class="word">bud <span class="zh-inline">花苞</span></span>
+        </div>
+      </div>
+      <div class="stage-card">
+        <span class="label">Last</span>
+        <div class="word-list">
+          <span class="word">bloom <span class="zh-inline">開花</span></span>
+          <span class="word">flowers <span class="zh-inline">花</span></span>
+          <span class="word">fruit <span class="zh-inline">果實</span></span>
+        </div>
+      </div>
+    </div>
+
+    <h3>✏️ 例句組合 ①</h3>
+    <div class="examples">
+      <ul>
+        <li><strong>First,</strong> plant the seeds in the soil.
+          <span class="zh">首先，把種子種在土裡。</span></li>
+        <li><strong>Next,</strong> the seed sprouts with tiny roots, leaves, and a stem.
+          <span class="zh">接著，種子發芽，長出小小的根、葉子和莖。</span></li>
+        <li><strong>Then,</strong> it grows into a seedling.
+          <span class="zh">然後，它長成一株幼苗。</span></li>
+        <li><strong>Last,</strong> the plant grows flowers and fruit.
+          <span class="zh">最後，植物長出花和果實。</span></li>
+      </ul>
+    </div>
+
+    <h3>✏️ 例句組合 ②</h3>
+    <div class="examples">
+      <ul>
+        <li><strong>First,</strong> a seed sleeps in the soil.
+          <span class="zh">首先，一顆種子睡在土裡。</span></li>
+        <li><strong>Next,</strong> a small sprout comes out of the seed.
+          <span class="zh">接著，一株小小的嫩芽從種子裡長出來。</span></li>
+        <li><strong>Then,</strong> a green bud grows on the tall plant.
+          <span class="zh">然後，一個綠色花苞長在高高的植物上。</span></li>
+        <li><strong>Last,</strong> the sunflower blooms bright in the sunshine.
+          <span class="zh">最後，向日葵在陽光下燦爛綻放。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PART C -->
+  <section>
+    <h2>Part C ｜ Venus the Flytrap 捕蠅草 Venus</h2>
+
+    <div class="story-split">
+      <div class="story-column english">
+        <div class="story-label">English Story</div>
+        <p class="en">One day, Mason had a Venus flytrap named Venus.</p>
+        <p class="en">A flytrap is supposed to eat bugs, but Venus would not eat flies, bees, or spiders.</p>
+        <p class="en">Mason and his mom were worried because Venus was getting weak.</p>
+        <p class="en">They took Venus to Papa Longo's pizza shop for help.</p>
+        <p class="en">At the shop, Venus smelled a fresh pizza and thought it smelled delicious.</p>
+        <p class="en">Then a fly landed on the pizza.</p>
+        <p class="en">Papa Longo gave Venus a little piece of pizza with the fly on it.</p>
+        <p class="en"><strong>Snap!</strong> Venus finally ate it and felt happy.</p>
+      </div>
+      <div class="story-column chinese">
+        <div class="story-label">中文故事</div>
+        <p class="zh">有一天，Mason 有一株名叫 Venus 的捕蠅草。</p>
+        <p class="zh">捕蠅草本來應該要吃昆蟲，但是 Venus 不肯吃蒼蠅、蜜蜂或蜘蛛。</p>
+        <p class="zh">Mason 和他的媽媽很擔心，因為 Venus 變得越來越虛弱。</p>
+        <p class="zh">他們把 Venus 帶到 Papa Longo 的披薩店尋求幫助。</p>
+        <p class="zh">在店裡，Venus 聞到剛出爐的披薩，覺得聞起來很香。</p>
+        <p class="zh">接著，一隻蒼蠅停在披薩上。</p>
+        <p class="zh">Papa Longo 給 Venus 一小塊上面有蒼蠅的披薩。</p>
+        <p class="zh">啪！Venus 終於把它吃掉了，而且感到很開心。</p>
+      </div>
+    </div>
+
+    <h3>❓ 題目和答案 Questions &amp; Answers</h3>
+
+    <div class="qa">
+      <div class="q">Q1. Who are the characters in the story?
+        <span class="zh">故事裡有哪些角色？</span>
+      </div>
+      <div class="a">A: The characters in the story are Mason, Venus, Mason's mom, and Papa Longo.
+        <span class="zh">故事裡的角色有 Mason、Venus、Mason 的媽媽，還有 Papa Longo。</span>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q">Q2. Why were Mason and his mom worried about Venus?
+        <span class="zh">為什麼 Mason 和他的媽媽會擔心 Venus？</span>
+      </div>
+      <div class="a">A: Mason and his mom were worried because Venus would not eat bugs and she was getting weak.
+        <span class="zh">Mason 和他的媽媽很擔心，因為 Venus 不肯吃昆蟲，而且她變得越來越虛弱。</span>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q">Q3. What did Venus finally eat, and why did she eat it?
+        <span class="zh">Venus 最後吃了什麼？她為什麼吃它？</span>
+      </div>
+      <div class="a">A: Venus finally ate a piece of pizza with a fly on it because it smelled delicious.
+        <span class="zh">Venus 最後吃了一塊上面有蒼蠅的披薩，因為那聞起來很香。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART D -->
+  <section>
+    <h2>Part D ｜ 單字與例句</h2>
+
+    <h3>🔑 功能字 Function Words</h3>
+    <div class="function-sheet">
+      <div class="practice-toolbar">
+        <button type="button" class="answer-toggle" data-answer-toggle aria-pressed="false">隱藏答案 Hide Answers</button>
+      </div>
+      <div class="word-bank-wrap">
+        <table class="word-bank-table">
+          <caption>Word Bank</caption>
+          <tbody>
+            <tr>
+              <td><span class="en">does</span><span class="zh">助動詞（第三人稱單數）</span></td>
+              <td><span class="en">our</span><span class="zh">我們的</span></td>
+              <td><span class="en">now</span><span class="zh">現在</span></td>
+            </tr>
+            <tr>
+              <td><span class="en">any</span><span class="zh">任何的／一些</span></td>
+              <td><span class="en">would</span><span class="zh">會／願意</span></td>
+              <td><span class="en">look</span><span class="zh">看</span></td>
+            </tr>
+            <tr>
+              <td><span class="en">and</span><span class="zh">和、而且</span></td>
+              <td><span class="en">but</span><span class="zh">但是</span></td>
+              <td><span class="en">because</span><span class="zh">因為</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ol class="function-practice">
+        <li>
+          <p class="function-line">Is there <span class="fill-word">any</span> juice left? I want some.</p>
+          <p class="zh">還有一些果汁嗎？我想喝一些。</p>
+        </li>
+        <li>
+          <p class="function-line"><span class="fill-word">Would</span> you like some cake?</p>
+          <p class="zh">你想要一些蛋糕嗎？</p>
+        </li>
+        <li>
+          <p class="function-line">We need to go <span class="fill-word">now</span>.</p>
+          <p class="zh">我們現在需要走了。</p>
+        </li>
+        <li>
+          <p class="function-line">What <span class="fill-word">does</span> this word mean?</p>
+          <p class="zh">這個單字是什麼意思？</p>
+        </li>
+        <li>
+          <p class="function-line"><span class="fill-word">Look</span> at the flower.</p>
+          <p class="zh">看那朵花。</p>
+        </li>
+        <li>
+          <p class="function-line">This is <span class="fill-word">our</span> classroom.</p>
+          <p class="zh">這是我們的教室。</p>
+        </li>
+        <li>
+          <p class="function-line">The flower is red <span class="fill-word">and</span> pretty.</p>
+          <p class="zh">這朵花是紅色而且漂亮的。</p>
+        </li>
+        <li>
+          <p class="function-line">The plant is small <span class="fill-word">but</span> strong.</p>
+          <p class="zh">這株植物很小，但是很強壯。</p>
+        </li>
+        <li>
+          <p class="function-line">The flower is happy <span class="fill-word">because</span> it has sunshine.</p>
+          <p class="zh">這朵花很開心，因為它有陽光。</p>
+        </li>
+      </ol>
+    </div>
+
+    <h3>⏰ 動詞現在式 / 過去式 Verbs</h3>
+    <div class="function-sheet verb-sheet">
+      <div class="practice-toolbar">
+        <button type="button" class="answer-toggle" data-answer-toggle aria-pressed="false">隱藏答案 Hide Answers</button>
+      </div>
+      <div class="word-bank-wrap">
+        <table class="word-bank-table">
+          <caption>Word Bank</caption>
+          <tbody>
+            <tr>
+              <td><span class="en">grow / grew</span><span class="zh">生長／長高了</span></td>
+              <td><span class="en">eat / ate</span><span class="zh">吃／吃了</span></td>
+              <td><span class="en">go / went</span><span class="zh">去／去了</span></td>
+            </tr>
+            <tr>
+              <td><span class="en">see / saw</span><span class="zh">看見／看見了</span></td>
+              <td><span class="en">give / gave</span><span class="zh">給／給了</span></td>
+              <td><span class="en">take / took</span><span class="zh">帶／帶了</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ol class="function-practice">
+        <li>
+          <p class="function-line">Plants <span class="fill-word">grow</span> in the sunshine. Last week, they <span class="fill-word">grew</span> taller.</p>
+          <p class="zh">植物在陽光下生長。上星期，它們長得更高了。</p>
+        </li>
+        <li>
+          <p class="function-line">We <span class="fill-word">eat</span> lunch at school every day. Yesterday, we <span class="fill-word">ate</span> pizza.</p>
+          <p class="zh">我們每天在學校吃午餐。昨天，我們吃了披薩。</p>
+        </li>
+        <li>
+          <p class="function-line">We <span class="fill-word">go</span> to the garden after class. Yesterday, we <span class="fill-word">went</span> there with our teacher.</p>
+          <p class="zh">我們下課後會去花園。昨天，我們和老師一起去了那裡。</p>
+        </li>
+        <li>
+          <p class="function-line">We <span class="fill-word">see</span> green leaves every day. Yesterday, we <span class="fill-word">saw</span> a butterfly on the flower.</p>
+          <p class="zh">我們每天都看得到綠葉。昨天，我們看到一隻蝴蝶停在花上。</p>
+        </li>
+        <li>
+          <p class="function-line">I <span class="fill-word">give</span> the plant some water every morning. Yesterday, I <span class="fill-word">gave</span> it extra water.</p>
+          <p class="zh">我每天早上都給植物一些水。昨天，我多給了它一些水。</p>
+        </li>
+        <li>
+          <p class="function-line">We <span class="fill-word">take</span> the class plant outside on sunny days. Yesterday, we <span class="fill-word">took</span> Venus to Papa Longo's pizza shop.</p>
+          <p class="zh">晴天時，我們會把班上的植物帶到外面。昨天，我們把 Venus 帶去 Papa Longo 的披薩店。</p>
+        </li>
+      </ol>
+    </div>
+
+    <h3>🌱 植物主題單字 Plant Vocabulary</h3>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <span class="word">seed</span><span class="meaning">種子</span>
+        <div class="sentence">The seed is in the soil.
+          <span class="zh">種子在土裡。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">soil</span><span class="meaning">土壤</span>
+        <div class="sentence">The plant grows in the soil.
+          <span class="zh">這株植物生長在土壤裡。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">sprout</span><span class="meaning">發芽／嫩芽</span>
+        <div class="sentence">The seed starts to sprout.
+          <span class="zh">種子開始發芽。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">roots</span><span class="meaning">根</span>
+        <div class="sentence">The roots grow under the soil.
+          <span class="zh">根長在土壤下面。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">leaves</span><span class="meaning">葉子</span>
+        <div class="sentence">The plant has green leaves.
+          <span class="zh">這株植物有綠色的葉子。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">stem</span><span class="meaning">莖</span>
+        <div class="sentence">The stem is green and thin.
+          <span class="zh">莖是綠色而且細的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">seedling</span><span class="meaning">幼苗</span>
+        <div class="sentence">The little plant is a seedling.
+          <span class="zh">這株小植物是一株幼苗。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">bud</span><span class="meaning">花苞</span>
+        <div class="sentence">A green bud grows on the plant.
+          <span class="zh">一個綠色的花苞長在植物上。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">bloom</span><span class="meaning">開花</span>
+        <div class="sentence">The flower starts to bloom.
+          <span class="zh">花開始綻放。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">flower</span><span class="meaning">花</span>
+        <div class="sentence">The flower is yellow and pretty.
+          <span class="zh">這朵花是黃色而且漂亮的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">fruit</span><span class="meaning">果實</span>
+        <div class="sentence">The plant grows fruit in summer.
+          <span class="zh">這株植物在夏天長出果實。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">plant</span><span class="meaning">植物／種植</span>
+        <div class="sentence">This plant is tall and green.
+          <span class="zh">這株植物又高又綠。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="word">sunshine</span><span class="meaning">陽光</span>
+        <div class="sentence">The flower grows in the sunshine.
+          <span class="zh">這朵花在陽光下生長。</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+  document.querySelectorAll("[data-answer-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const sheet = button.closest(".function-sheet");
+      const hidden = sheet.classList.toggle("answers-hidden");
+      button.textContent = hidden ? "顯示答案 Show Answers" : "隱藏答案 Hide Answers";
+      button.setAttribute("aria-pressed", String(hidden));
+    });
+  });
+</script>
+</body>
+</html>
