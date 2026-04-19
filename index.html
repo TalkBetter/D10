@@ -179,6 +179,39 @@
     display: block;
     margin-left: 4px;
   }
+  .toggle-example-item {
+    padding: 8px 0;
+  }
+  .toggle-example-item .example-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px 12px;
+    align-items: start;
+  }
+  .toggle-example-item .zh {
+    margin-left: 0;
+  }
+  .toggle-example-item .sentence-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    font-size: 0.82em;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(85, 103, 216, 0.10);
+  }
+  .toggle-example-item .example-en {
+    display: none;
+    color: #1f5f94;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-left: 0;
+  }
+  .toggle-example-item.is-visible .example-en {
+    display: block;
+  }
 
   /* Part B stages */
   .stages {
@@ -334,6 +367,14 @@
   .qa .q { color: #bc5b3d; font-weight: bold; font-size: 1.14em; }
   .qa .a { color: #235b88; margin-top: 6px; font-size: 1.08em; }
   .qa .zh { color: #768696; font-size: 1.03em; display: block; }
+  .venus-block.answers-hidden .story-split {
+    grid-template-columns: 1fr;
+  }
+  .venus-block.answers-hidden .story-column.chinese,
+  .venus-block.answers-hidden .qa .q .zh,
+  .venus-block.answers-hidden .qa .a {
+    display: none;
+  }
 
   /* Part D vocab */
   .vocab-grid {
@@ -697,39 +738,231 @@
     </table>
 
     <h3>✏️ 例句 Example Sentences</h3>
-    <div class="examples">
-      <ol>
-        <li>The flowers are red and pretty.</li>
-        <li>The tree is tall and green.</li>
-        <li>The leaves are small and green.</li>
-        <li>The bird is small and cute.</li>
-        <li>The cat is white and cute.</li>
-        <li>The dog is brown and happy.</li>
-        <li>The ball is round and blue.</li>
-        <li>The kite is big and colourful.</li>
-        <li>The bag is small and pink.</li>
-        <li>The car is big and black.</li>
-        <li>The house is big and beautiful.</li>
-        <li>The sun is bright and yellow.</li>
-        <li>The cloud is white and soft.</li>
-        <li>The sky is blue and clean.</li>
-        <li>The apple is red and round.</li>
-        <li>The banana is long and yellow.</li>
-        <li>The fish is small and orange.</li>
-        <li>The butterfly is pretty and colourful.</li>
-        <li>The book is new and clean.</li>
-        <li>The box is big and brown.</li>
-        <li>The rabbit is white and small.</li>
-        <li>The girl is young and happy.</li>
-        <li>The boy is short and happy.</li>
-        <li>The baby is cute and young.</li>
-        <li>The road is long and clean.</li>
-        <li>The chair is small and brown.</li>
-        <li>The table is long and brown.</li>
-        <li>The flower pot is small and nice.</li>
-        <li>The garden is beautiful and clean.</li>
-        <li>The classroom is big and bright.</li>
-      </ol>
+    <div data-inline-group>
+      <div class="practice-toolbar">
+        <button
+          type="button"
+          class="answer-toggle"
+          data-inline-toggle-all
+          data-show-label="顯示所有例句"
+          data-hide-label="隱藏所有例句"
+          aria-pressed="false"
+        >顯示所有例句</button>
+      </div>
+      <div class="examples">
+        <ol>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">花朵是紅色而且漂亮的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The flowers are red and pretty.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這棵樹又高又綠。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The tree is tall and green.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">葉子小小的，而且是綠色的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The leaves are small and green.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這隻鳥又小又可愛。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The bird is small and cute.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這隻貓是白色而且可愛的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The cat is white and cute.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這隻狗是棕色而且開心的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The dog is brown and happy.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這顆球又圓又藍。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The ball is round and blue.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個風箏又大又色彩繽紛。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The kite is big and colourful.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個袋子又小又粉紅。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The bag is small and pink.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這台車又大又黑。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The car is big and black.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這棟房子又大又漂亮。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The house is big and beautiful.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">太陽是明亮而且黃色的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The sun is bright and yellow.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">雲朵是白色而且柔軟的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The cloud is white and soft.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">天空是藍色而且乾淨清澈的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The sky is blue and clean.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這顆蘋果是紅色而且圓圓的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The apple is red and round.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這根香蕉長長的，而且是黃色的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The banana is long and yellow.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這條魚小小的，而且是橘色的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The fish is small and orange.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這隻蝴蝶很漂亮，而且色彩繽紛。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The butterfly is pretty and colourful.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這本書是新的，而且很乾淨。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The book is new and clean.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個盒子又大又棕色。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The box is big and brown.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這隻兔子是白色而且小小的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The rabbit is white and small.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個女孩年紀小，而且很開心。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The girl is young and happy.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個男孩個子矮，而且很開心。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The boy is short and happy.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個寶寶很可愛，而且很年幼。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The baby is cute and young.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這條路很長，而且很乾淨。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The road is long and clean.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這張椅子小小的，而且是棕色的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The chair is small and brown.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這張桌子很長，而且是棕色的。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The table is long and brown.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個花盆小小的，而且很好看。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The flower pot is small and nice.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這個花園很美，而且很乾淨。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The garden is beautiful and clean.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">這間教室很大，而且很明亮。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en">The classroom is big and bright.</span>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -768,32 +1001,74 @@
       </div>
     </div>
 
-    <h3>✏️ 例句組合 ①</h3>
-    <div class="examples">
-      <ul>
-        <li><strong>First,</strong> plant the seeds in the soil.
-          <span class="zh">首先，把種子種在土裡。</span></li>
-        <li><strong>Next,</strong> the seed sprouts with tiny roots, leaves, and a stem.
-          <span class="zh">接著，種子發芽，長出小小的根、葉子和莖。</span></li>
-        <li><strong>Then,</strong> it grows into a seedling.
-          <span class="zh">然後，它長成一株幼苗。</span></li>
-        <li><strong>Last,</strong> the plant grows flowers and fruit.
-          <span class="zh">最後，植物長出花和果實。</span></li>
-      </ul>
-    </div>
+    <div class="part-b-examples">
+      <h3>✏️ 例句組合 ①</h3>
+      <div class="examples">
+        <ul>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">首先，把種子種在土裡。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>First,</strong> plant the seeds in the soil.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">接著，種子發芽，長出小小的根、葉子和莖。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>Next,</strong> the seed sprouts with tiny roots, leaves, and a stem.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">然後，它長成一株幼苗。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>Then,</strong> it grows into a seedling.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">最後，植物長出花和果實。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>Last,</strong> the plant grows flowers and fruit.</span>
+          </li>
+        </ul>
+      </div>
 
-    <h3>✏️ 例句組合 ②</h3>
-    <div class="examples">
-      <ul>
-        <li><strong>First,</strong> a seed sleeps in the soil.
-          <span class="zh">首先，一顆種子睡在土裡。</span></li>
-        <li><strong>Next,</strong> a small sprout comes out of the seed.
-          <span class="zh">接著，一株小小的嫩芽從種子裡長出來。</span></li>
-        <li><strong>Then,</strong> a green bud grows on the tall plant.
-          <span class="zh">然後，一個綠色花苞長在高高的植物上。</span></li>
-        <li><strong>Last,</strong> the sunflower blooms bright in the sunshine.
-          <span class="zh">最後，向日葵在陽光下燦爛綻放。</span></li>
-      </ul>
+      <h3>✏️ 例句組合 ②</h3>
+      <div class="examples">
+        <ul>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">首先，一顆種子睡在土裡。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>First,</strong> a seed sleeps in the soil.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">接著，一株小小的嫩芽從種子裡長出來。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>Next,</strong> a small sprout comes out of the seed.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">然後，一個綠色花苞長在高高的植物上。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>Then,</strong> a green bud grows on the tall plant.</span>
+          </li>
+          <li class="toggle-example-item">
+            <div class="example-head">
+              <span class="zh">最後，向日葵在陽光下燦爛綻放。</span>
+              <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文" data-hide-label="隱藏英文" aria-pressed="false">顯示英文</button>
+            </div>
+            <span class="example-en"><strong>Last,</strong> the sunflower blooms bright in the sunshine.</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -801,57 +1076,70 @@
   <section>
     <h2>Part C ｜ Venus the Flytrap 捕蠅草 Venus</h2>
 
-    <div class="story-split">
-      <div class="story-column english">
-        <div class="story-label">English Story</div>
-        <p class="en">One day, Mason had a Venus flytrap named Venus.</p>
-        <p class="en">A flytrap is supposed to eat bugs, but Venus would not eat flies, bees, or spiders.</p>
-        <p class="en">Mason and his mom were worried because Venus was getting weak.</p>
-        <p class="en">They took Venus to Papa Longo's pizza shop for help.</p>
-        <p class="en">At the shop, Venus smelled a fresh pizza and thought it smelled delicious.</p>
-        <p class="en">Then a fly landed on the pizza.</p>
-        <p class="en">Papa Longo gave Venus a little piece of pizza with the fly on it.</p>
-        <p class="en"><strong>Snap!</strong> Venus finally ate it and felt happy.</p>
+    <div class="venus-block" data-answer-scope>
+      <div class="practice-toolbar">
+        <button
+          type="button"
+          class="answer-toggle"
+          data-answer-toggle
+          data-show-label="顯示中文和答案 Show Chinese &amp; Answers"
+          data-hide-label="隱藏中文和答案 Hide Chinese &amp; Answers"
+          aria-pressed="false"
+        >隱藏中文和答案 Hide Chinese &amp; Answers</button>
       </div>
-      <div class="story-column chinese">
-        <div class="story-label">中文故事</div>
-        <p class="zh">有一天，Mason 有一株名叫 Venus 的捕蠅草。</p>
-        <p class="zh">捕蠅草本來應該要吃昆蟲，但是 Venus 不肯吃蒼蠅、蜜蜂或蜘蛛。</p>
-        <p class="zh">Mason 和他的媽媽很擔心，因為 Venus 變得越來越虛弱。</p>
-        <p class="zh">他們把 Venus 帶到 Papa Longo 的披薩店尋求幫助。</p>
-        <p class="zh">在店裡，Venus 聞到剛出爐的披薩，覺得聞起來很香。</p>
-        <p class="zh">接著，一隻蒼蠅停在披薩上。</p>
-        <p class="zh">Papa Longo 給 Venus 一小塊上面有蒼蠅的披薩。</p>
-        <p class="zh">啪！Venus 終於把它吃掉了，而且感到很開心。</p>
-      </div>
-    </div>
 
-    <h3>❓ 題目和答案 Questions &amp; Answers</h3>
+      <div class="story-split">
+        <div class="story-column english">
+          <div class="story-label">English Story</div>
+          <p class="en">One day, Mason had a Venus flytrap named Venus.</p>
+          <p class="en">A flytrap is supposed to eat bugs, but Venus would not eat flies, bees, or spiders.</p>
+          <p class="en">Mason and his mom were worried because Venus was getting weak.</p>
+          <p class="en">They took Venus to Papa Longo's pizza shop for help.</p>
+          <p class="en">At the shop, Venus smelled a fresh pizza and thought it smelled delicious.</p>
+          <p class="en">Then a fly landed on the pizza.</p>
+          <p class="en">Papa Longo gave Venus a little piece of pizza with the fly on it.</p>
+          <p class="en"><strong>Snap!</strong> Venus finally ate it and felt happy.</p>
+        </div>
+        <div class="story-column chinese">
+          <div class="story-label">中文故事</div>
+          <p class="zh">有一天，Mason 有一株名叫 Venus 的捕蠅草。</p>
+          <p class="zh">捕蠅草本來應該要吃昆蟲，但是 Venus 不肯吃蒼蠅、蜜蜂或蜘蛛。</p>
+          <p class="zh">Mason 和他的媽媽很擔心，因為 Venus 變得越來越虛弱。</p>
+          <p class="zh">他們把 Venus 帶到 Papa Longo 的披薩店尋求幫助。</p>
+          <p class="zh">在店裡，Venus 聞到剛出爐的披薩，覺得聞起來很香。</p>
+          <p class="zh">接著，一隻蒼蠅停在披薩上。</p>
+          <p class="zh">Papa Longo 給 Venus 一小塊上面有蒼蠅的披薩。</p>
+          <p class="zh">啪！Venus 終於把它吃掉了，而且感到很開心。</p>
+        </div>
+      </div>
 
-    <div class="qa">
-      <div class="q">Q1. Who are the characters in the story?
-        <span class="zh">故事裡有哪些角色？</span>
-      </div>
-      <div class="a">A: The characters in the story are Mason, Venus, Mason's mom, and Papa Longo.
-        <span class="zh">故事裡的角色有 Mason、Venus、Mason 的媽媽，還有 Papa Longo。</span>
-      </div>
-    </div>
+      <h3>❓ 題目和答案 Questions &amp; Answers</h3>
 
-    <div class="qa">
-      <div class="q">Q2. Why were Mason and his mom worried about Venus?
-        <span class="zh">為什麼 Mason 和他的媽媽會擔心 Venus？</span>
+      <div class="qa">
+        <div class="q">Q1. Who are the characters in the story?
+          <span class="zh">故事裡有哪些角色？</span>
+        </div>
+        <div class="a">A: The characters in the story are Mason, Venus, Mason's mom, and Papa Longo.
+          <span class="zh">故事裡的角色有 Mason、Venus、Mason 的媽媽，還有 Papa Longo。</span>
+        </div>
       </div>
-      <div class="a">A: Mason and his mom were worried because Venus would not eat bugs and she was getting weak.
-        <span class="zh">Mason 和他的媽媽很擔心，因為 Venus 不肯吃昆蟲，而且她變得越來越虛弱。</span>
-      </div>
-    </div>
 
-    <div class="qa">
-      <div class="q">Q3. What did Venus finally eat, and why did she eat it?
-        <span class="zh">Venus 最後吃了什麼？她為什麼吃它？</span>
+      <div class="qa">
+        <div class="q">Q2. Why were Mason and his mom worried about Venus?
+          <span class="zh">為什麼 Mason 和他的媽媽會擔心 Venus？</span>
+        </div>
+        <div class="a">A: Mason and his mom were worried because Venus would not eat bugs and she was getting weak.
+          <span class="zh">Mason 和他的媽媽很擔心，因為 Venus 不肯吃昆蟲，而且她變得越來越虛弱。</span>
+        </div>
       </div>
-      <div class="a">A: Venus finally ate a piece of pizza with a fly on it because it smelled delicious.
-        <span class="zh">Venus 最後吃了一塊上面有蒼蠅的披薩，因為那聞起來很香。</span>
+
+      <div class="qa">
+        <div class="q">Q3. What did Venus finally eat, and why did she eat it?
+          <span class="zh">Venus 最後吃了什麼？她為什麼吃它？</span>
+        </div>
+        <div class="a">A: Venus finally ate a piece of pizza with a fly on it because it smelled delicious.
+          <span class="zh">Venus 最後吃了一塊上面有蒼蠅的披薩，因為那聞起來很香。</span>
+        </div>
       </div>
     </div>
   </section>
@@ -861,7 +1149,7 @@
     <h2>Part D ｜ 單字與例句</h2>
 
     <h3>🔑 功能字 Function Words</h3>
-    <div class="function-sheet">
+    <div class="function-sheet" data-answer-scope>
       <div class="practice-toolbar">
         <button type="button" class="answer-toggle" data-answer-toggle aria-pressed="false">隱藏答案 Hide Answers</button>
       </div>
@@ -929,7 +1217,7 @@
     </div>
 
     <h3>⏰ 動詞現在式 / 過去式 Verbs</h3>
-    <div class="function-sheet verb-sheet">
+    <div class="function-sheet verb-sheet" data-answer-scope>
       <div class="practice-toolbar">
         <button type="button" class="answer-toggle" data-answer-toggle aria-pressed="false">隱藏答案 Hide Answers</button>
       </div>
@@ -1053,11 +1341,61 @@
 <script>
   document.querySelectorAll("[data-answer-toggle]").forEach((button) => {
     button.addEventListener("click", () => {
-      const sheet = button.closest(".function-sheet");
-      const hidden = sheet.classList.toggle("answers-hidden");
-      button.textContent = hidden ? "顯示答案 Show Answers" : "隱藏答案 Hide Answers";
+      const scope = button.closest("[data-answer-scope]");
+      if (!scope) return;
+      const hidden = scope.classList.toggle("answers-hidden");
+      const showLabel = button.dataset.showLabel || "顯示答案 Show Answers";
+      const hideLabel = button.dataset.hideLabel || "隱藏答案 Hide Answers";
+      button.textContent = hidden ? showLabel : hideLabel;
       button.setAttribute("aria-pressed", String(hidden));
     });
+  });
+
+  const setInlineItemState = (item, shown) => {
+    item.classList.toggle("is-visible", shown);
+    const button = item.querySelector("[data-inline-toggle]");
+    if (!button) return;
+    const showLabel = button.dataset.showLabel || "顯示英文";
+    const hideLabel = button.dataset.hideLabel || "隱藏英文";
+    button.textContent = shown ? hideLabel : showLabel;
+    button.setAttribute("aria-pressed", String(shown));
+  };
+
+  const syncInlineGroup = (group) => {
+    if (!group) return;
+    const button = group.querySelector("[data-inline-toggle-all]");
+    if (!button) return;
+    const items = Array.from(group.querySelectorAll(".toggle-example-item"));
+    const allShown = items.length > 0 && items.every((item) => item.classList.contains("is-visible"));
+    const showLabel = button.dataset.showLabel || "顯示所有例句";
+    const hideLabel = button.dataset.hideLabel || "隱藏所有例句";
+    button.textContent = allShown ? hideLabel : showLabel;
+    button.setAttribute("aria-pressed", String(allShown));
+  };
+
+  document.querySelectorAll("[data-inline-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".toggle-example-item");
+      if (!item) return;
+      const shown = !item.classList.contains("is-visible");
+      setInlineItemState(item, shown);
+      syncInlineGroup(item.closest("[data-inline-group]"));
+    });
+  });
+
+  document.querySelectorAll("[data-inline-toggle-all]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const group = button.closest("[data-inline-group]");
+      if (!group) return;
+      const items = Array.from(group.querySelectorAll(".toggle-example-item"));
+      const shouldShowAll = !items.every((item) => item.classList.contains("is-visible"));
+      items.forEach((item) => setInlineItemState(item, shouldShowAll));
+      syncInlineGroup(group);
+    });
+  });
+
+  document.querySelectorAll("[data-inline-group]").forEach((group) => {
+    syncInlineGroup(group);
   });
 </script>
 </body>
