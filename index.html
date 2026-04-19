@@ -396,9 +396,14 @@
     font-size: 1.36em;
   }
   .vocab-card .meaning {
+    display: block;
     color: #748494;
     font-size: 1.03em;
-    margin-left: 6px;
+    margin-top: 4px;
+    margin-left: 0;
+  }
+  .vocab-card .example-head {
+    margin-top: 10px;
   }
   .vocab-card .sentence {
     margin-top: 6px;
@@ -519,6 +524,10 @@
     color: transparent;
     text-shadow: none;
     box-shadow: inset 0 -3px 0 #1f2b45;
+  }
+  .function-sheet.answers-hidden .word-bank-table .zh,
+  .function-sheet.answers-hidden .function-practice .zh {
+    display: none;
   }
   .function-practice .zh {
     display: block;
@@ -1151,7 +1160,14 @@
     <h3>🔑 功能字 Function Words</h3>
     <div class="function-sheet" data-answer-scope>
       <div class="practice-toolbar">
-        <button type="button" class="answer-toggle" data-answer-toggle aria-pressed="false">隱藏答案 Hide Answers</button>
+        <button
+          type="button"
+          class="answer-toggle"
+          data-answer-toggle
+          data-show-label="顯示答案和中文 Show Answers &amp; Chinese"
+          data-hide-label="隱藏答案和中文 Hide Answers &amp; Chinese"
+          aria-pressed="false"
+        >隱藏答案和中文 Hide Answers &amp; Chinese</button>
       </div>
       <div class="word-bank-wrap">
         <table class="word-bank-table">
@@ -1219,7 +1235,14 @@
     <h3>⏰ 動詞現在式 / 過去式 Verbs</h3>
     <div class="function-sheet verb-sheet" data-answer-scope>
       <div class="practice-toolbar">
-        <button type="button" class="answer-toggle" data-answer-toggle aria-pressed="false">隱藏答案 Hide Answers</button>
+        <button
+          type="button"
+          class="answer-toggle"
+          data-answer-toggle
+          data-show-label="顯示答案和中文 Show Answers &amp; Chinese"
+          data-hide-label="隱藏答案和中文 Hide Answers &amp; Chinese"
+          aria-pressed="false"
+        >隱藏答案和中文 Hide Answers &amp; Chinese</button>
       </div>
       <div class="word-bank-wrap">
         <table class="word-bank-table">
@@ -1268,71 +1291,122 @@
     </div>
 
     <h3>🌱 植物主題單字 Plant Vocabulary</h3>
-    <div class="vocab-grid">
-      <div class="vocab-card">
-        <span class="word">seed</span><span class="meaning">種子</span>
-        <div class="sentence">The seed is in the soil.
-          <span class="zh">種子在土裡。</span></div>
+    <div class="vocab-sheet" data-inline-group>
+      <div class="practice-toolbar">
+        <button
+          type="button"
+          class="answer-toggle"
+          data-inline-toggle-all
+          data-show-label="顯示所有英文例句"
+          data-hide-label="隱藏所有英文例句"
+          aria-pressed="true"
+        >隱藏所有英文例句</button>
       </div>
-      <div class="vocab-card">
-        <span class="word">soil</span><span class="meaning">土壤</span>
-        <div class="sentence">The plant grows in the soil.
-          <span class="zh">這株植物生長在土壤裡。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">sprout</span><span class="meaning">發芽／嫩芽</span>
-        <div class="sentence">The seed starts to sprout.
-          <span class="zh">種子開始發芽。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">roots</span><span class="meaning">根</span>
-        <div class="sentence">The roots grow under the soil.
-          <span class="zh">根長在土壤下面。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">leaves</span><span class="meaning">葉子</span>
-        <div class="sentence">The plant has green leaves.
-          <span class="zh">這株植物有綠色的葉子。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">stem</span><span class="meaning">莖</span>
-        <div class="sentence">The stem is green and thin.
-          <span class="zh">莖是綠色而且細的。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">seedling</span><span class="meaning">幼苗</span>
-        <div class="sentence">The little plant is a seedling.
-          <span class="zh">這株小植物是一株幼苗。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">bud</span><span class="meaning">花苞</span>
-        <div class="sentence">A green bud grows on the plant.
-          <span class="zh">一個綠色的花苞長在植物上。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">bloom</span><span class="meaning">開花</span>
-        <div class="sentence">The flower starts to bloom.
-          <span class="zh">花開始綻放。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">flower</span><span class="meaning">花</span>
-        <div class="sentence">The flower is yellow and pretty.
-          <span class="zh">這朵花是黃色而且漂亮的。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">fruit</span><span class="meaning">果實</span>
-        <div class="sentence">The plant grows fruit in summer.
-          <span class="zh">這株植物在夏天長出果實。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">plant</span><span class="meaning">植物／種植</span>
-        <div class="sentence">This plant is tall and green.
-          <span class="zh">這株植物又高又綠。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="word">sunshine</span><span class="meaning">陽光</span>
-        <div class="sentence">The flower grows in the sunshine.
-          <span class="zh">這朵花在陽光下生長。</span></div>
+      <div class="vocab-grid">
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">seed</span><span class="meaning">種子</span>
+          <div class="example-head">
+            <span class="zh">種子在土裡。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The seed is in the soil.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">soil</span><span class="meaning">土壤</span>
+          <div class="example-head">
+            <span class="zh">這株植物生長在土壤裡。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The plant grows in the soil.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">sprout</span><span class="meaning">發芽／嫩芽</span>
+          <div class="example-head">
+            <span class="zh">種子開始發芽。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The seed starts to sprout.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">roots</span><span class="meaning">根</span>
+          <div class="example-head">
+            <span class="zh">根長在土壤下面。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The roots grow under the soil.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">leaves</span><span class="meaning">葉子</span>
+          <div class="example-head">
+            <span class="zh">這株植物有綠色的葉子。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The plant has green leaves.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">stem</span><span class="meaning">莖</span>
+          <div class="example-head">
+            <span class="zh">莖是綠色而且細的。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The stem is green and thin.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">seedling</span><span class="meaning">幼苗</span>
+          <div class="example-head">
+            <span class="zh">這株小植物是一株幼苗。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The little plant is a seedling.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">bud</span><span class="meaning">花苞</span>
+          <div class="example-head">
+            <span class="zh">一個綠色的花苞長在植物上。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">A green bud grows on the plant.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">bloom</span><span class="meaning">開花</span>
+          <div class="example-head">
+            <span class="zh">花開始綻放。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The flower starts to bloom.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">flower</span><span class="meaning">花</span>
+          <div class="example-head">
+            <span class="zh">這朵花是黃色而且漂亮的。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The flower is yellow and pretty.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">fruit</span><span class="meaning">果實</span>
+          <div class="example-head">
+            <span class="zh">這株植物在夏天長出果實。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The plant grows fruit in summer.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">plant</span><span class="meaning">植物／種植</span>
+          <div class="example-head">
+            <span class="zh">這株植物又高又綠。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">This plant is tall and green.</div>
+        </div>
+        <div class="vocab-card toggle-example-item is-visible">
+          <span class="word">sunshine</span><span class="meaning">陽光</span>
+          <div class="example-head">
+            <span class="zh">這朵花在陽光下生長。</span>
+            <button type="button" class="answer-toggle sentence-toggle" data-inline-toggle data-show-label="顯示英文例句" data-hide-label="隱藏英文例句" aria-pressed="true">隱藏英文例句</button>
+          </div>
+          <div class="sentence example-en">The flower grows in the sunshine.</div>
+        </div>
       </div>
     </div>
   </section>
